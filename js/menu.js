@@ -38,7 +38,7 @@ for (const menuWrapper of menus) {
     if (event.target.getAttribute("role") !== "menuitem") return;
 
     hideMenu();
-    alert("✓ " + event.target.innerText);
+    alert("✓ " + event.target.innerText.trim());
     button.focus();
   });
 

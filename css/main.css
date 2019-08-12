@@ -147,11 +147,11 @@ ul > * + * {
 .collapses {
   display: flex;
   flex-wrap: wrap;
-  margin: -0.5em;
+  margin: 2em -0.5em;
 }
 
 .collapses > * {
-  flex: 999 0 5em;
+  flex: 999 0 10em;
   margin: 0.5em;
 }
 

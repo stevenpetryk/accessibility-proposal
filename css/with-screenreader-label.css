@@ -1,0 +1,19 @@
+.with-screenreader-label img {
+  width: 100%;
+  height: auto;
+}
+
+.with-screenreader-label .screenreader-label {
+  font-size: var(--s-2);
+  text-align: center;
+  background: var(--dark);
+  color: var(--light);
+  margin: 0 auto;
+  padding: var(--s-3);
+  max-width: max-content;
+  border-radius: var(--round);
+}
+
+.with-screenreader-label .screenreader-label:before {
+  content: "🔉 ";
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/forms.css" />
     <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/with-screenreader-label.css" />
   </head>
 
   <body class="nojs">
@@ -42,6 +43,69 @@
       <h2>Accessibility in practice</h2>
 
       <p>Making web content accessible is easier than you'd expect.</p>
+
+      <h3>Non-text content</h3>
+
+      <p>
+        Non-text content, like images, videos, audio recordings, and charts,
+        need to have text-based alternatives.
+      </p>
+
+      <p>
+        For some types of content, this means that the text must contain all of
+        the information in the non-text content. For others, where a thorough
+        description is impossible, a summary suffices.
+      </p>
+
+      <div class="example" role="group">
+        <h4>Example: Adding <code>alt</code> text to images</h4>
+
+        <p>
+          alt-text is the first thing most people picture when they think about
+          accessibility. It must be written with care and tuned to the context
+          of the image it annotates.
+        </p>
+
+        <p>
+          In the <strong>before</strong> example below, a screen reader is shown
+          to read the file name of the image.
+        </p>
+
+        <p>
+          In the <strong>after</strong> example, a screen reader reads a
+          human-entered description of the image.
+        </p>
+
+        <div class="collapses">
+          <div class="stack-h" role="group">
+            <h5>Before</h5>
+
+            <div class="with-screenreader-label">
+              <img src="images/img-123412341234.jpg" />
+
+              <p class="screenreader-label" aria-hidden="true">
+                "Forward slash i m g dash one two three four one two three four
+                one two three four dot jpeg. Image."
+              </p>
+            </div>
+          </div>
+
+          <div class="stack-h" role="group">
+            <h5>After</h5>
+
+            <div class="with-screenreader-label">
+              <img
+                src="images/img-123412341234.jpg"
+                alt="A fluffy dog with huge ears smiles at the camera."
+              />
+
+              <p class="screenreader-label" aria-hidden="true">
+                "A fluffy dog with huge ears smiles at the camera. Image."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <h3>Keyboard perceivability</h3>
 

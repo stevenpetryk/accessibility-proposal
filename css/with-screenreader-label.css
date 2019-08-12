@@ -5,13 +5,13 @@
 }
 
 .with-screenreader-label .screenreader-label {
-  font-size: var(--s-2);
+  font-size: var(--s-1);
   text-align: center;
-  background: var(--dark);
-  color: var(--light);
+  background: var(--light);
+  border: 0.2em solid var(--dark);
   margin: 0 auto;
   margin-top: var(--s-2);
-  padding: var(--s-3);
+  padding: var(--s-5) var(--s0);
   max-width: max-content;
   border-radius: var(--round);
   position: relative;
@@ -22,13 +22,15 @@
   display: block;
   position: absolute;
 
+  z-index: -1;
+
   width: 1em;
   height: 1em;
   top: 0;
   left: 10%;
   background: var(--dark);
   border-radius: calc(var(--round) / 2);
-  transform: translateY(-0.35em) rotate(-45deg);
+  transform: translateY(-0.5em) rotate(-45deg);
 }
 
 .with-screenreader-label .screenreader-label:before {

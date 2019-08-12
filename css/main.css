@@ -1,7 +1,7 @@
 :root {
   --light: rgba(255, 255, 255);
   --dark: rgba(20, 20, 20);
-  --accent: #833fea; /* AA and AA+ compliant against white and black, respectively. */
+  --accent: #a673f1;
 
   --ratio: 1.2;
   --s-5: calc(
@@ -190,6 +190,7 @@ a {
   color: inherit;
   text-decoration: none;
   border-bottom: 0.1em solid var(--dark);
+  text-shadow: 0 0 0 0.3em var(--light);
 }
 
 a:not(.no-focus):focus {

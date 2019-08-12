@@ -1,0 +1,62 @@
+input,
+textarea,
+button,
+.button {
+  appearance: none;
+  font: inherit;
+  border: 0.1em solid var(--dark);
+  padding: 0.6em 0.9em;
+  color: inherit;
+  border-radius: var(--round);
+}
+
+button,
+.button {
+  background: var(--dark);
+  color: var(--light);
+  border: none;
+  border: 0.1em solid var(--dark);
+  font-weight: 600;
+  box-shadow: 0 0 0 0 var(--accent);
+}
+
+button:hover,
+.button:hover {
+  background: var(--light);
+  color: var(--dark);
+}
+
+button:not(.no-focus):focus,
+.button:not(.no-focus):focus {
+  box-shadow: 0 0 0 var(--outline-width) var(--accent);
+  outline: 0;
+  background: var(--light);
+  color: var(--dark);
+}
+
+input,
+textarea {
+  background: var(--light);
+}
+
+input:not(.no-focus):focus,
+textarea:not(.no-focus):focus {
+  box-shadow: 0 0 0 var(--outline-width) var(--accent);
+  outline: 0;
+}
+
+label:first-child {
+  display: block;
+}
+
+.field {
+  display: block;
+}
+
+.field > * + * {
+  margin-top: var(--s-1);
+}
+
+.button-icon {
+  margin-inline-start: var(--s-3);
+}

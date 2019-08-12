@@ -1,0 +1,28 @@
+.menu-with-button {
+  position: relative;
+}
+
+.menu-with-button ul[role="menu"] {
+  position: absolute;
+  top: calc(100% + var(--s-5));
+  width: 15em;
+  background: var(--dark);
+  border-radius: calc(var(--round) * 2);
+  padding: var(--s-5);
+  list-style: none;
+}
+
+.menu-with-button [role="menuitem"] {
+  width: 100%;
+  display: block;
+  text-align: left;
+}
+
+.menu-with-button ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-with-button ul > * + * {
+  margin-top: var(--s-5);
+}

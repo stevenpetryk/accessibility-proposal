@@ -1,0 +1,212 @@
+:root {
+  --light: rgba(255, 255, 255);
+  --dark: rgba(20, 20, 20);
+  --accent: #833fea; /* AA and AA+ compliant against white and black, respectively. */
+
+  --ratio: 1.2;
+  --s-5: calc(
+    var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) /
+      var(--ratio)
+  );
+  --s-4: calc(
+    var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio)
+  );
+  --s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s0) * var(--ratio) * var(--ratio));
+  --s3: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s4: calc(
+    var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio)
+  );
+  --s5: calc(
+    var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) *
+      var(--ratio)
+  );
+  --measure: 65ch;
+  --line-height: var(--ratio);
+
+  --font-regular: system-ui;
+
+  --outline-width: 0.2em;
+  --round: 0.3rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(0.8em + 0.5vw);
+}
+
+html.dark {
+  --dark: rgba(230, 230, 230);
+  --light: rgba(20, 20, 20);
+}
+
+body {
+  font-family: var(--font-regular);
+  background: var(--light);
+  color: var(--dark);
+}
+
+.vh {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+body {
+  padding: 2em 1em;
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+main p {
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: var(--s5);
+}
+
+h2,
+.h2 {
+  font-size: var(--s4);
+}
+
+h3,
+.h3 {
+  font-size: var(--s3);
+}
+
+h4,
+.h4 {
+  font-size: var(--s2);
+}
+
+h5,
+.h5 {
+  font-size: var(--s1);
+}
+
+body > header > * + * {
+  margin-top: var(--s2);
+}
+
+body > header svg {
+  width: 8em;
+  height: auto;
+}
+
+body > header {
+  margin-bottom: 4em;
+}
+
+main > * + * {
+  margin-top: var(--s3);
+}
+
+ul > * + * {
+  margin-top: 1em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+}
+
+.stack-v {
+  display: flex;
+}
+
+.stack-v > * + * {
+  margin-inline-start: var(--s0);
+}
+
+.stack-h > * + * {
+  margin-block-start: var(--s0);
+}
+
+.collapses {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5em;
+}
+
+.collapses > * {
+  flex: 999 0 5em;
+  margin: 0.5em;
+}
+
+.nojs .dark-theme-button {
+  display: none;
+}
+
+:focus {
+  outline: var(--outline-width) solid var(--accent);
+  outline-offset: 3px;
+}
+
+.no-focus:focus {
+  outline: 0;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+kbd {
+  border: 0.15em solid;
+  font-weight: 600;
+  border-radius: var(--round);
+  padding: 0.1em 0.3em 0.2em;
+  text-transform: lowercase;
+  font-size: 0.8em;
+  color: var(--accent);
+}
+
+footer {
+  padding-top: 300px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 0.1em solid var(--dark);
+}
+
+a:not(.no-focus):focus {
+  border-bottom: none;
+}
+
+.example {
+  border-left: 0.5em solid;
+  padding: var(--s2);
+}
+
+.example .collapses {
+  margin-top: var(--s4);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}

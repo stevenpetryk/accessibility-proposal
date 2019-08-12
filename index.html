@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Accessibility Program proposal</title>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+  </head>
+
+  <body class="nojs">
+    <header>
+      <h1>Accessibility Program</h1>
+      <p class="subtitle">
+        <span class="vh">Subtitle: </span>
+        A proposal to make our software inclusive
+      </p>
+    </header>
+
+    <main>
+      <h2>Problem</h2>
+
+      <p>Our application is unusable for a large portion of the population.</p>
+
+      <p>
+        Excluding people in this way contradicts our mission, propagates as
+        ableism in our customers, and betrays a misuse of web technology.
+      </p>
+
+      <h2>Who is affected?</h2>
+
+      <p>
+        Real people. There are people who use us, but who cannot complete
+        critical workflows because of their disabilities.
+      </p>
+
+      <p>uhhhh more to come here</p>
+
+      <h2>Accessibility in practice</h2>
+
+      <p>Making web content accessible is easier than you'd expect.</p>
+
+      <h3>Keyboard perceivability</h3>
+
+      <p>
+        Interactions that are possible via the mouse must also be possible via
+        the keyboard. This means users must be able to <em>see</em> which
+        elements are focused.
+      </p>
+
+      <div class="example" role="group">
+        <h4>Example</h4>
+
+        <p>
+          Use the <kbd>tab</kbd> and <kbd>shift</kbd> <kbd>tab</kbd> keys to
+          navigate these elements. Note that in the <strong>before</strong>,
+          it's impossible to tell where you are. In the <strong>after</strong>,
+          it's clear.
+        </p>
+
+        <div class="collapses">
+          <div class="stack-h" role="group">
+            <h5>Before</h5>
+
+            <div class="field">
+              <label for="example-no-focus-field">Example field</label>
+              <input type="text" class="no-focus" id="example-no-focus-field" />
+            </div>
+
+            <div class="field">
+              <button role="button" class="no-focus">Button</button>
+            </div>
+
+            <p>
+              <a href="https://google.com" class="no-focus">Example link</a>
+            </p>
+          </div>
+
+          <div class="stack-h" role="group">
+            <h5>After</h5>
+
+            <div class="field">
+              <label for="example-field">Example field</label>
+              <input type="text" id="example-field" />
+            </div>
+
+            <div class="field">
+              <button role="button">Button</button>
+            </div>
+
+            <p><a href="https://google.com">Example link</a></p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Keyboard operability</h3>
+
+      <p>
+        Interactions that are possible via the mouse must also be possible via
+        the keyboard. This means users must be able to
+        <strong>interact</strong> with focused elements using the keyboard.
+      </p>
+
+      <div class="example" role="group">
+        <h4>Example</h4>
+
+        <p>
+          Use your mouse to interact with these menus. Now, use your keyboard.
+          Note the awkwardness of the <strong>before</strong> menu, where
+          pressing things like <kbd>enter</kbd> and <kbd>space</kbd>
+          "work" but do not feel native.
+        </p>
+
+        <p>
+          In the <strong>after</strong> menu, focus is managed and arrow keys
+          are respected according to standards. Pressing
+          <kbd>escape</kbd> closes the menu and restores focus to the button.
+        </p>
+
+        <div class="collapses">
+          <div class="stack-h" role="group">
+            <h5>Before</h5>
+
+            <div class="menu-with-button no-focus-mgmt">
+              <button role="button" aria-expanded="false" aria-haspopup="true">
+                Open menu
+
+                <span class="button-icon" aria-hidden="true">
+                  <svg width="10" height="10" focusable="false">
+                    <path d="M0,2 L10,2 L5,8" fill="currentColor" />
+                  </svg>
+                </span>
+              </button>
+
+              <ul role="menu">
+                <li role="presentation">
+                  <button role="menuitem">Hug a cat</button>
+                </li>
+                <li role="presentation">
+                  <button role="menuitem">Hug a dog</button>
+                </li>
+                <li role="presentation">
+                  <button role="menuitem">
+                    Hug a tardigrade
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="stack-h" role="group">
+            <h5>After</h5>
+
+            <div class="menu-with-button">
+              <button role="button" aria-expanded="false" aria-haspopup="true">
+                Open menu
+
+                <span class="button-icon" aria-hidden="true">
+                  <svg width="10" height="10" focusable="false">
+                    <path d="M0,2 L10,2 L5,8" fill="currentColor" />
+                  </svg>
+                </span>
+              </button>
+
+              <ul role="menu">
+                <li role="presentation">
+                  <button role="menuitem">Hug a cat</button>
+                </li>
+                <li role="presentation">
+                  <button role="menuitem">Hug a dog</button>
+                </li>
+                <li role="presentation">
+                  <button role="menuitem">
+                    Hug a tardigrade
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <button class="dark-theme-button">Dark theme</button>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+    <script src="js/dark-mode.js" type="module"></script>
+    <script src="js/menu.js" type="module"></script>
+  </body>
+</html>

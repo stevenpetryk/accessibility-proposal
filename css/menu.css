@@ -26,3 +26,7 @@
 .menu-with-button ul > * + * {
   margin-top: var(--s-5);
 }
+
+.menu-with-button > button[aria-expanded="true"] + [role="menu"] {
+  z-index: 1;
+}

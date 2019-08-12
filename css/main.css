@@ -211,3 +211,8 @@ a:not(.no-focus):focus {
     scroll-behavior: smooth;
   }
 }
+
+code {
+  white-space: nowrap;
+  font-weight: 600;
+}

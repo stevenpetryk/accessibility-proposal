@@ -111,8 +111,9 @@
         <h4>Example: Presentational content</h4>
 
         <p>
-          Lots of elements of a UI do not need text alternatives. For example, a
-          button with a right arrow:
+          Lots of elements of a UI do not need text alternatives. For example,
+          button icons where the icon does not add information the text does not
+          already provide:
         </p>
 
         <div class="collapses">
@@ -169,7 +170,8 @@
 
         <p>
           It is unhelpful for a screen reader to announce "right arrow" when the
-          meaning of the button is perfectly portrayed by its text.
+          meaning of the button is conveyed by its text. Marking the icon with
+          <code>aria-hidden="true"</code> prevents it from being announced.
         </p>
       </div>
 

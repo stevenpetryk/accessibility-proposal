@@ -2,6 +2,7 @@ input,
 textarea,
 button,
 .button {
+  -webkit-appearance: none;
   appearance: none;
   font: inherit;
   border: 0.1em solid var(--dark);

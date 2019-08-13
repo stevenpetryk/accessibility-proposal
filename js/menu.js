@@ -3,35 +3,47 @@ const menus = document.querySelectorAll(".menu-with-button");
 for (const menuWrapper of menus) {
   const button = menuWrapper.querySelector("[aria-haspopup]");
   const menu = menuWrapper.querySelector("[role=menu]");
-  const noFocusMgmt = menuWrapper.classList.contains("no-focus-mgmt");
+  const manageFocus = !menuWrapper.classList.contains("no-focus-mgmt");
+
+  function closeIfLostFocus(event) {
+    if (!event.target || !menuWrapper.contains(event.target)) {
+      hideMenu();
+    }
+  }
 
   function showMenu() {
     menu.removeAttribute("hidden");
     button.setAttribute("aria-expanded", true);
+    window.addEventListener("click", closeIfLostFocus);
+
+    if (manageFocus) {
+      window.addEventListener("focusin", closeIfLostFocus);
+      button.setAttribute("tabindex", "-1");
+    }
   }
 
   function hideMenu() {
     menu.setAttribute("hidden", true);
-    button.setAttribute("aria-expanded", false);
+    button.removeAttribute("aria-expanded");
+    window.removeEventListener("click", closeIfLostFocus);
+
+    if (manageFocus) {
+      button.setAttribute("tabindex", "0");
+      window.removeEventListener("focusin", closeIfLostFocus);
+    }
   }
 
   button.addEventListener("click", event => {
-    if (button.getAttribute("aria-expanded") === "false") {
+    if (button.getAttribute("aria-expanded")) {
+      hideMenu();
+    } else {
       showMenu();
 
       const isKeyboard = event.screenX === 0 && event.screenY === 0;
 
-      if (!noFocusMgmt && isKeyboard) {
+      if (isKeyboard) {
         selectButton(menu.querySelector("[role=menuitem]"));
       }
-    } else {
-      hideMenu();
-    }
-  });
-
-  window.addEventListener("click", event => {
-    if (!menuWrapper.contains(event.target)) {
-      hideMenu();
     }
   });
 
@@ -45,9 +57,9 @@ for (const menuWrapper of menus) {
     button.focus();
   });
 
-  if (noFocusMgmt) continue;
-
   function selectButton(button) {
+    if (!manageFocus) return;
+
     Array.from(menu.querySelectorAll("[role=menuitem]")).forEach(b =>
       b.setAttribute("tabindex", "-1")
     );
@@ -61,8 +73,8 @@ for (const menuWrapper of menus) {
         event.preventDefault();
         showMenu();
         selectButton(menu.querySelector("li:last-child [role=menuitem]"));
-
         break;
+
       case "ArrowDown":
         event.preventDefault();
         showMenu();
@@ -85,6 +97,7 @@ for (const menuWrapper of menus) {
         }
 
         break;
+
       case "ArrowUp":
         event.preventDefault();
 
@@ -96,6 +109,17 @@ for (const menuWrapper of menus) {
           selectButton(menu.querySelector("li:last-child [role=menuitem]"));
         }
         break;
+
+      case "Home":
+        event.preventDefault();
+        selectButton(menu.querySelector("[role=menuitem]"));
+        break;
+
+      case "End":
+        event.preventDefault();
+        selectButton(menu.querySelector("li:last-child [role=menuitem]"));
+        break;
+
       case "Escape":
         hideMenu();
         button.focus();

@@ -62,18 +62,19 @@
 
         <p>
           <code>alt</code> text is the first thing most people picture when they
-          think about accessibility. It must be written with care and tuned to
-          the context of the image it annotates.
+          think about accessibility. It must be written with care, taking into
+          consideration the context of the photo. The W3C provides an
+          <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/"
+            >alt decision tree</a
+          >
+          to help determine how to write <code>alt</code> text (or when not to).
         </p>
 
         <p>
-          In the <strong>before</strong> example below, a screen reader is shown
-          to read the file name of the image.
-        </p>
-
-        <p>
-          In the <strong>after</strong> example, a screen reader reads a
-          human-entered description of the image.
+          In the <strong>before</strong> example below, a screen reader reads
+          the file name of the image. In the <strong>after</strong> example, a
+          human has taken care to provide alt text, so the screen reader
+          describes the contents of the image.
         </p>
 
         <div class="collapses">
@@ -104,6 +105,18 @@
             </div>
           </div>
         </div>
+
+        <h5>WCAG 2.1 Compliance</h5>
+
+        <p>This exemplifies the following WCAG 2.1 Success Criteria:</p>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/WCAG21/#non-text-content"
+              >1.1.1 Non-text Content</a
+            >
+          </li>
+        </ul>
       </div>
 
       <div class="example" role="group">
@@ -165,7 +178,7 @@
       </p>
 
       <div class="example" role="group">
-        <h4>Example</h4>
+        <h4>Example: Focus styles</h4>
 
         <p>
           Use the <kbd>tab</kbd> and <kbd>shift</kbd> <kbd>tab</kbd> keys to
@@ -207,6 +220,29 @@
             <p><a href="https://google.com">Example link</a></p>
           </div>
         </div>
+
+        <h5>WCAG 2.1 Compliance</h5>
+
+        <p>This exemplifies the following WCAG 2.1 Success Criteria:</p>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/WCAG21/#use-of-color"
+              >1.4.1 Use of Color</a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.w3.org/TR/WCAG21/#contrast-enhanced"
+              >1.4.6 Contrast (Enhanced)</a
+            >
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/WCAG21/#focus-visible"
+              >2.4.7 Focus Visible</a
+            >
+          </li>
+        </ul>
       </div>
 
       <h3>Keyboard operability</h3>
@@ -295,12 +331,34 @@
           </div>
         </div>
 
-        <p>
-          This example implements the
-          <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton"
-            >WAI-ARIA menu button design pattern</a
-          >.
-        </p>
+        <h5>WCAG 2.1 Compliance</h5>
+
+        <p>This exemplifies the following WCAG 2.1 Success Criteria:</p>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/WCAG21/#name-role-value"
+              >4.1.2 Name, Role, Value</a
+            >
+          </li>
+        </ul>
+
+        <h5>WAI-ARIA Authoring Practices 1.1 Compliance</h5>
+
+        <p>This exemplifies the following WAI-ARIA 1.1 practices:</p>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton"
+              >3.16 Menu Button</a
+            >
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menu"
+              >3.15 Menu or Menu bar</a
+            >
+          </li>
+        </ul>
       </div>
 
       <h2>Our application's issues</h2>

@@ -7,7 +7,6 @@
 .with-screenreader-label .screenreader-label {
   font-size: var(--s-1);
   text-align: left;
-  background: var(--light);
   border: 0.2em solid var(--dark);
   margin: 0 auto;
   margin-top: var(--s-2);

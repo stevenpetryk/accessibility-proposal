@@ -68,6 +68,7 @@ for (const menuWrapper of menus) {
   }
 
   button.addEventListener("keydown", event => {
+    if (!manageFocus) return;
     switch (event.key) {
       case "ArrowUp":
         event.preventDefault();
@@ -84,6 +85,8 @@ for (const menuWrapper of menus) {
   });
 
   menu.addEventListener("keydown", event => {
+    if (!manageFocus) return;
+
     switch (event.key) {
       case "ArrowDown":
         event.preventDefault();

@@ -15,10 +15,13 @@ for (const menuWrapper of menus) {
     button.setAttribute("aria-expanded", false);
   }
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", event => {
     if (button.getAttribute("aria-expanded") === "false") {
       showMenu();
-      if (!noFocusMgmt) {
+
+      const isKeyboard = event.screenX === 0 && event.screenY === 0;
+
+      if (!noFocusMgmt && isKeyboard) {
         selectButton(menu.querySelector("[role=menuitem]"));
       }
     } else {

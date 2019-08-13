@@ -6,18 +6,23 @@
 
 .with-screenreader-label .screenreader-label {
   font-size: var(--s-1);
-  text-align: center;
+  text-align: left;
   background: var(--light);
   border: 0.2em solid var(--dark);
   margin: 0 auto;
   margin-top: var(--s-2);
-  padding: var(--s-5) var(--s0);
+  padding: var(--s-5) var(--s-4);
   max-width: max-content;
   border-radius: var(--round);
   position: relative;
+  /* TODO: not dark mode compatible */
+  background: url("/images/speaker.svg") var(--light) center left 0.6em
+    no-repeat;
+  background-size: 0.8em;
+  padding-left: var(--s3);
 }
 
-.with-screenreader-label .screenreader-label:after {
+.with-screenreader-label .screenreader-label:before {
   content: "";
   display: block;
   position: absolute;
@@ -31,8 +36,4 @@
   background: var(--dark);
   border-radius: calc(var(--round) / 2);
   transform: translateY(-0.5em) rotate(-45deg);
-}
-
-.with-screenreader-label .screenreader-label:before {
-  content: "🔉 ";
 }
